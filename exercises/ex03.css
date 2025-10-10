@@ -1,0 +1,28 @@
+
+.test-div{
+background: lightgreen;
+padding: 20px;
+margin: 20px;}
+
+p { color:blue}
+
+div.test-div h2 {
+    color:blue; }
+
+.test-div:hover{
+    background: pink;
+}
+
+h1, h2, h3, h4 {
+    text-decoration: underline;
+}
+
+h2 {color:blue;}
+.test-div {
+    color: palevioletred
+}
+
+#house {
+    display: flex;
+    flex-direction: row-reverse;
+}
