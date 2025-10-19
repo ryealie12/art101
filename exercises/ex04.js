@@ -1,26 +1,21 @@
 
-let totalNumber = 0;
-
+let count = 0;
+let colors = ["orchid", "coral", "hotpink", "plum"]; // new line tp add
 
 // add a button titled click me
 
 $("#needy-button").click( function(){
-    totalNumber = totalNumber + 3;
-    let sentance ="i was clicked ";
-    let sentancetwo = " times";
-    let totalNumbers= sentance+totalNumber +sentancetwo;
 
-   $("#needy-button").html(totalNumbers);
+    let reminder= count % colors.length;
+  
+
+   $("#needy-button").html ("clicks:" + count + "colors:" + colors[count]);
+
+    $("body").css("background-color", colors[reminder]);
+
+    count = count + 1;
 
 });
 
 
-//when it is clicked 
-//add one to the total number
 
-// show the total number
-//on our button
-//show "clicked total number times"
-
-
-//a top limit
