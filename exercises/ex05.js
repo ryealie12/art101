@@ -1,39 +1,37 @@
 var count = 0;
-let colorCount = 0;
-var colors = ["Orchid", "Coral", "HotPink", "Plum"];
+let itemCount = 0;
+var items = ["fly", "dessert", "house", "ladybug"];
 
-
-function makeImage (imageName) {
-
- if (colors[colorCount] == imageName) {
-       $("body").append("<img width=50 src='art101/images/" + imageName + ".png'>");
-   }
-
+function makeImage(name) {
+  // go up one level from exercises/ to art101/, then into images/
+  $("body").append("<img width='80' src='../images/" + name + ".png'>");
 }
 
-function changeBackground (newcolor){
-
-     $("body").css("background-color", newcolor); 
+function changeBackground() {
+  const colors = ["Orchid", "Coral", "HotPink", "Plum", "LightSkyBlue", "PeachPuff"];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  $("body").css("background-color", randomColor);
 }
- 
-$(".color-button").click (function (){
 
-changeBackground(this.id);
+$(".image-button").click(function () {
+  makeImage(this.id);
+  changeBackground();
 });
 
-// the button part
 $("#needy-button").click(function () {
-   if (count < 5) { mood = "fresh and happy"; }
-   else if ((count >= 5) && (count < 10)) { mood = "keep pushing"; }
-   else { mood = "so tired"; }
-   $("#needy-button").html("Clicks: " + count + " Color: " + colors[colorCount] + " " + mood);
- 
-    changeBackground(colors[colorCount]);
+  let mood;
+  if (count < 5) mood = "fresh and happy";
+  else if (count < 10) mood = "keep pushing";
+  else mood = "so tired";
 
-   makeImage("spider"); 
+  $("#needy-button").html(
+    "Clicks: " + count + " | Image: " + items[itemCount] + " | Mood: " + mood
+  );
 
-   count = count + 1;
-   colorCount = colorCount + 1;
-   if (colorCount == 4) { colorCount = 0; }
+  makeImage(items[itemCount]);
+  changeBackground();
+
+  count++;
+  itemCount++;
+  if (itemCount === items.length) itemCount = 0;
 });
-
