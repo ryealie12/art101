@@ -1,0 +1,27 @@
+.nice-block {
+  height: 40px;
+  overflow: hidden;
+  width: 150px;
+  padding: 10px;
+  background: pink;
+  margin: 20px;
+}
+
+.more {
+  height: auto;
+  overflow: visible;
+}
+
+.nice-block span {
+  cursor: pointer;
+  color: darkviolet;
+}
+
+
+#surprise-img {
+  display: none;
+  position: absolute;
+  width: 150px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1000;
+}
