@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- All techy stuff goes here, inside HEAD -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Overall title of your page -->
+    <title>Lab 8</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="8.css">
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Link to external JavaScript file -->
+    <script src="8.js" defer></script>
+</head>
+
+<body>
+    <!-- Main content goes here, inside BODY -->
+    <h1>Rye's Clicker</h1>
+Hello, try to type in this box as it runs away from you  
+</body>
+
+
+
+<!-- Your textbox -->
+<input type="text" id="myTextbox" placeholder="Click me to move!" style="position: absolute; left: 20px; top: 50px;">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function () {
+    $("#myTextbox").on("click", function () {
+        $(this).animate({
+            left: "+=200px",   // move right 200px
+            top: "+=50px"      // move down 50px
+        }, 600);               // duration in milliseconds
+    });
+});
+</script>
+ 
+
+
+</html>
