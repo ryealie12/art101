@@ -5,8 +5,8 @@ $(document).ready(function () {
     if ($(this).html() === "more") {
       $(this).html("less");
 
-      // If this is the LAST block, show the image
-      if ($(this).parent().is(":last-child")) {
+      // If this is the LAST .nice-block, show the image
+      if ($(this).parent().is(".nice-block:last")) {
         $("#surprise-img")
           .css({
             top: $(this).offset().top + 50 + "px",
@@ -19,8 +19,8 @@ $(document).ready(function () {
     } else {
       $(this).html("more");
 
-      //  If this is the LAST block, hide the image
-      if ($(this).parent().is(":last-child")) {
+      // Hide image if collapsing last .nice-block
+      if ($(this).parent().is(".nice-block:last")) {
         $("#surprise-img").fadeOut(200);
       }
     }
